@@ -1,9 +1,8 @@
-{% extends "bootstrap/base.html" %}
-{% import "bootstrap/wtf.html as wtf %}
+{%extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
 <!doctype html>
-
 {% block title %}
-Filmy - klasyfikacja
+System klasyfikacji komentarzy
 {% endblock %}
 
 {% block content %}
@@ -11,7 +10,7 @@ Filmy - klasyfikacja
 
 <div id='button'>
 	  <form action="/">
-	    <input class="btn btn-info" type=submit value='Prześlij kolejną recenzję'>
+	    <input class ="btn btn-info center-block" type=submit value='Prześlij kolejną recenzję'>
 	  </form>
 </div>
 {% endblock %}
