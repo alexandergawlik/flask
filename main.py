@@ -10,7 +10,9 @@ app = Flask(__name__)
 Bootstrap(app)
 
 class ReviewForm(Form):
-    moviereview = TextAreaField('',[validators.DataRequired(), validators.lenght(min=15)])
+    moviereview = TextAreaField('',
+                                [validators.DataRequired(),
+                                validators.length(min=15)])
 @app.route('/')
 def index():
     form = ReviewForm(request.form)
