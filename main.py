@@ -20,15 +20,14 @@ def index():
     form = ReviewForm(request.form)
     return render_template('reviewform.html', form=form)
 
-@app.route('/')#, methods=['POST'])
+@app.route('/results'), methods=['POST'])
 def results():
     form = ReviewForm(request.form)
-    #if request.method == 'POST' and form.validate():
-    #    return render_template('results.html')
-    #    review = request.form['moviereview']
+    if request.method == 'POST' and form.validate():
+        review = request.form['moviereview']
         #y, proba = classify(review)
-   #     return render_template('results.html',
-   #                             content=review)#,
+        return render_template('results.html',
+                                content=review)#,
         #                        prediction=y,
         #                        probability=round(proba*100, 2))
     return render_template('results.html', form=form)
