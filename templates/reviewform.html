@@ -1,14 +1,9 @@
 {%extends "bootstrap/base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 <!doctype html>
-{% block html %}
-<head>
-	{% block head %}
-	{% block title %} System klasyfikacji komentarzy {% endblock title %}
-	{% block favicon %}<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">{% endblock %}
-	{% endblock head %}
-</head>
-{% endblock html %}
+
+{% block title %} System klasyfikacji komentarzy {% endblock title %}
+	
 
 {% block content %}
 <h2 class="text-center">Wpisz swój komentarz</h2>
