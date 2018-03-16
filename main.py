@@ -15,12 +15,12 @@ class ReviewForm(Form):
                                 [validators.DataRequired(),
                                 validators.length(min=15)])
 
-#@app.route('/a')
-#def index():
-#    form = ReviewForm(request.form)
-#    return render_template('reviewform.html', form=form)
+@app.route('/')
+def index():
+    form = ReviewForm(request.form)
+    return render_template('reviewform.html', form=form)
 
-@app.route('/')#, methods=['POST'])
+@app.route('/results')#, methods=['POST'])
 def results():
     form = ReviewForm(request.form)
     #if request.method == 'POST' and form.validate():
