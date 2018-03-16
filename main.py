@@ -6,8 +6,6 @@ import os
 import numpy as np
 from flask_bootstrap import Bootstrap
 
-from vectorizer import vect
-
 
 app = Flask(__name__)
 Bootstrap(app)
