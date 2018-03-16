@@ -22,7 +22,7 @@ def index():
 
 @app.route('/results', methods=['POST'])
 def results():
-    form = ReviewForm(request.form)
+    #form = ReviewForm(request.form)
     #if request.method == 'POST' and form.validate():
     #    review = request.form['moviereview']
     #    y, proba = classify(review)
@@ -30,7 +30,7 @@ def results():
     #                            content=review,
     #                            prediction=y,
     #                            probability=round(proba*100, 2))
-    return render_template('reviewform.html', form=form)
+    return render_template('reviewform.html')#, form=form)
 
 @app.route('/thanks', methods=['POST'])
 def feedback():
