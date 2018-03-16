@@ -23,7 +23,7 @@ def index():
 @app.route('/results', methods=['POST'])
 def results():
     form = ReviewForm(request.form)
-    if request.method == 'POST' and form.validate():
+    #if request.method == 'POST' and form.validate():
     #    review = request.form['moviereview']
     #    y, proba = classify(review)
     #    return render_template('results.html',
