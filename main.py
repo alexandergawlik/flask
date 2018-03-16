@@ -5,7 +5,7 @@ from flask import Flask,render_template, request
 app = Flask(__name__)
 
 
-@app.route('/results')
+@app.route('/')
 def index():
     return render_template('results.html')
 if __name__ == '__main__':
