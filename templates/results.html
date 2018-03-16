@@ -1,32 +1,33 @@
+{%extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
 <!doctype html>
 <html>
-  <head>
-    <title>Filmy - klasyfikacja</title>
-	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  </head>
-  <body>
+{% block title %}
+System klasyfikacji komentarzy
+{% endblock %}
 
-<h3>Twoja recenzja filmu:</h3>
-<div>{{ content }}</div>
+{% block content %}
 
-<h3>Prognoza:</h3>
-<div>Ta recenzja jest <strong>{{ prediction }}</strong>
+<h3 class="text-center">Twoja recenzja filmu:</h3>
+<div class="text-center">{{ content }}</div>
+
+<h3 class="text-center">Prognoza:</h3>
+<div class="text-center">Ta recenzja jest <strong>{{ prediction }}</strong>
 	 (prawdopodobieństwo: {{ probability }}%).</div>
 
-<div id='button'>
+<div  id='button'>
 	  <form action="/thanks" method="post">
-	    <input type=submit value='Prawidłowa' name='feedback_button'>
-		<input type=submit value='Nieprawidłowa' name='feedback_button'>
-		<input type=hidden value='{{ prediction }}' name='prediction'>
-		<input type=hidden value='{{ content }}' name='review'>
+	    <input class ="btn btn-info center-block" type=submit value='Prawidłowa' name='feedback_button'>
+		<input class ="btn btn-info center-block" type=submit value='Nieprawidłowa' name='feedback_button'>
+		<input class ="btn btn-info center-block" type=hidden value='{{ prediction }}' name='prediction'>
+		<input class ="btn btn-info center-block" type=hidden value='{{ content }}' name='review'>
 	  </form>
 </div>
 
 <div id='button'>
 	  <form action="/">
-	    <input type=submit value='Prześlij kolejną recenzję'>
+	    <input class ="btn btn-info center-block"type=submit value='Prześlij kolejną recenzję'>
 	  </form>
 </div>
 
-  </body>
-</html>
+{% endblock %}
