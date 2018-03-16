@@ -3,8 +3,10 @@
 <!doctype html>
 {% block html %}
 <head>
+	{% block head %}
 	{% block title %} System klasyfikacji komentarzy {% endblock title %}
 	{% block favicon %}<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">{% endblock %}
+	{% endblock head %}
 </head>
 {% endblock html %}
 
