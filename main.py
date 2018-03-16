@@ -10,11 +10,12 @@ from flask_bootstrap import Bootstrap
 app = Flask(__name__)
 Bootstrap(app)
 
-#class ReviewForm(Form):
- #   moviereview = TextAreaField('',[validators.DataRequired()])
+class ReviewForm(Form):
+    moviereview = TextAreaField('',[validators.DataRequired()])
 @app.route('/')
 def index():
-    #form = ReviewForm(request.form)
-    return render_template('thanks.html')
+    form = ReviewForm(request.form)
+    return render_template('reviewform.html',form=form)
 if __name__ == '__main__':
   app.run()
+
