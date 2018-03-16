@@ -12,14 +12,14 @@ System klasyfikacji komentarzy
 <div class="text-center">{{ content }}</div>
 
 <h3 class="text-center">Prognoza:</h3>
-<div class="text-center">Ta recenzja jest <strong>{{ prediction }}</strong>
-	 (prawdopodobieństwo: {{ probability }}%).</div>
+<div class="text-center">Ta recenzja jest <!--<strong>{{ prediction }}</strong>
+	 (prawdopodobieństwo: {{ probability }}%).--></div>
 
 <div  id='button'>
 	  <form action="/thanks" method="post">
 	    <input class ="btn btn-info center-block" type=submit value='Prawidłowa' name='feedback_button'>
 		<input class ="btn btn-info center-block" type=submit value='Nieprawidłowa' name='feedback_button'>
-		<input class ="btn btn-info center-block" type=hidden value='{{ prediction }}' name='prediction'>
+		<!--<input class ="btn btn-info center-block" type=hidden value='{{ prediction }}' name='prediction'>-->
 		<input class ="btn btn-info center-block" type=hidden value='{{ content }}' name='review'>
 	  </form>
 </div>
