@@ -1,5 +1,5 @@
 from flask import Flask,render_template, request
-#from wtforms import Form, TextAreaField, validators
+from wtforms import Form, TextAreaField, validators
 
 
 app = Flask(__name__)
@@ -7,6 +7,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('reviewform.html')
+    return render_template('results.html')
 if __name__ == '__main__':
   app.run()
