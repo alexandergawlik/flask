@@ -1,11 +1,11 @@
 {%extends "bootstrap/base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 <!doctype html>
+{% block head %}
 
-{% block title %}
-System klasyfikacji komentarzy
-{% endblock %}
-
+<title>{% block title %} System klasyfikacji komentarzy {% endblock title %}</title>
+{% endblock head %}
+{% block favicon %}flask/favicon.ico{% endblock %}
 {% block content %}
 <h2 class="text-center">Wpisz swój komentarz</h2>
 
@@ -20,4 +20,4 @@ System klasyfikacji komentarzy
   </div>
 </form>
 </div>
-{% endblock %}
+{% endblock content %}
