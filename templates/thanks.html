@@ -1,17 +1,17 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html as wtf %}
 <!doctype html>
-<html>
-  <head>
-    <title>Filmy - klasyfikacja</title>
-  </head>
-  <body>
 
-<h3>Dziękujemy za podzielenie się opinią!</h3>
+{% block title %}
+Filmy - klasyfikacja
+{% endblock %}
+
+{% block content %}
+<h3 class="text-center">Dziękujemy za podzielenie się opinią!</h3>
 
 <div id='button'>
 	  <form action="/">
-	    <input type=submit value='Prześlij kolejną recenzję'>
+	    <input class="btn btn-info" type=submit value='Prześlij kolejną recenzję'>
 	  </form>
 </div>
-
-  </body>
-</html>
+{% endblock %}
