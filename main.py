@@ -10,6 +10,6 @@ class ReviewForm(Form):
 @app.route('/')
 def index():
     form = ReviewForm(request.form)
-    return render_template('reviewform.html', form=form)
+    return render_template('results.html', form=form)
 if __name__ == '__main__':
   app.run()
