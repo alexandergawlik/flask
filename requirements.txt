@@ -6,5 +6,3 @@ cloudpickle==0.5.2
 SQLAlchemy==1.2.1
 numpy==1.14.0
 Werkzeug==0.14.1
-SciPy>= 0.13.3
-scikit-learn==0.19.1
