@@ -10,20 +10,20 @@ app = Flask(__name__)
 Bootstrap(app)
 app.url_map.strict_slashes = False
 class ReviewForm(Form):
-    moviereview = TextAreaField('',
+    comment = TextAreaField('',
                                 [validators.DataRequired(),
                                 validators.length(min=15)])
 
 @app.route('/')
 def index():
     form = ReviewForm(request.form)
-    return render_template('reviewform.html', form=form)
+    return render_template('commentform.html', form=form)
 
 @app.route('/results.html', methods=['POST'])
 def results():
     form = ReviewForm(request.form)
     if request.method == 'POST' and form.validate():
-        review = request.form['moviereview']
+        review = request.form['comment']
         #y, proba = classify(review)
         return render_template('results.html',
                                 content=review)#,
