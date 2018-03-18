@@ -9,7 +9,7 @@ from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
 Bootstrap(app)
-
+app.url_map.strict_slashes = False
 class ReviewForm(Form):
     moviereview = TextAreaField('',
                                 [validators.DataRequired(),
@@ -32,7 +32,7 @@ def results():
         #                        probability=round(proba*100, 2))
     return render_template('results.html', form=form)
 
-@app.route('/thanks.html')#, methods=['POST'])
+@app.route('/thanks.html', methods=['POST'])
 def feedback():
     #feedback = request.form['feedback_button']
     #review = request.form['review']
