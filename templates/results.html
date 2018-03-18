@@ -15,18 +15,18 @@ System klasyfikacji komentarzy
 <div class="text-center">Ten komentarz jest <!--<strong>{{ prediction }}</strong>
 	 (prawdopodobieństwo: {{ probability }}%).--></div>
 
-<div  id='button'>
+<!--<div  id='button'>
 	  <form action="/thanks.html" method="post">
 	    <input class ="btn btn-info center-block" type=submit value='Prawidłowa' name='feedback_button'>
 		<input class ="btn btn-info center-block" type=submit value='Nieprawidłowa' name='feedback_button'>
-		<input class ="btn btn-info center-block" type=hidden  name='prediction'> <!-- value='{{ prediction }}' -->
-		<input class ="btn btn-info center-block" type=hidden  name='review'> <!-- value='{{ content }}' -->
+		<input class ="btn btn-info center-block" type=hidden  name='prediction'> value='{{ prediction }}' 
+		<input class ="btn btn-info center-block" type=hidden  name='review'> value='{{ content }}'
 	  </form>
 </div>
-
+-->
 <div id='button'>
-	  <form action="/">
-	    <input class ="btn btn-info center-block"type=submit value='Prześlij kolejny komentarz'>
+	  <form action="/thanks.html">
+	    <input class ="btn btn-info center-block"type=submit value='Przejdź dalej'>
 	  </form>
 </div>
 
