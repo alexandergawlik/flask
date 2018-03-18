@@ -5,7 +5,6 @@ import sqlite3
 import os
 import numpy as np
 from flask_bootstrap import Bootstrap
-from sklearn.feature_extraction.text import HashingVectorizer
 
 app = Flask(__name__)
 Bootstrap(app)
