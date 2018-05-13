@@ -29,7 +29,7 @@ def results():
     form = ReviewForm(request.form)
     if request.method == 'POST' and form.validate():
         review = request.form['comment']
-        y, proba = classify(comment)
+        y, proba = classifier.classify(review)
         return render_template('results.html',
                                 content=review),
                                prediction=y,
