@@ -30,7 +30,7 @@ def results():
     if request.method == 'POST' and form.validate():
         review = request.form['comment']
         y, proba = classifier.classify(review)
-        return render_template('results.html',content=review),prediction=y,probability=round(proba*100, 2))
+        return render_template('results.html', content=review), prediction=y, probability=round(proba*100, 2))
     return render_template('results.html', form=form)
 
 @app.route('/thanks.html', methods=['POST'])
