@@ -9,6 +9,7 @@ from nlpcloud import SpamClassifier
 
 app = Flask(__name__)
 cur_dir = os.path.dirname(__file__)
+x = SpamClassifier()
 Bootstrap(app)
 app.url_map.strict_slashes = False
 class ReviewForm(Form):
@@ -26,11 +27,12 @@ def results():
     form = ReviewForm(request.form)
     if request.method == 'POST' and form.validate():
         review = request.form['comment']
-        #y, proba = classify(review)
+        y, proba=x.classify(review)
+        y, proba = classify(review)
         return render_template('results.html',
                                 content=review)#,
-        #                        prediction=y,
-        #                        probability=round(proba*100, 2))
+                               prediction=y,
+                               probability=round(proba*100, 2))
     return render_template('results.html', form=form)
 
 @app.route('/thanks.html', methods=['POST'])
