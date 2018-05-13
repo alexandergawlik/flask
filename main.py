@@ -18,7 +18,7 @@ class ReviewForm(Form):
                                 [validators.DataRequired(),
                                 validators.length(min=15)])
 classifier = SpamClassifier()
-y, proba=x.classify(review)
+
 @app.route('/')
 def index():
     form = ReviewForm(request.form)
@@ -29,7 +29,7 @@ def results():
     form = ReviewForm(request.form)
     if request.method == 'POST' and form.validate():
         review = request.form['comment']
-        #y, proba = classify(review)
+        y, proba = classify(review)
         return render_template('results.html',
                                 content=review),
                                prediction=y,
