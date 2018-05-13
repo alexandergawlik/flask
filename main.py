@@ -8,7 +8,7 @@ from flask_bootstrap import Bootstrap
 from nlpcloud import SpamClassifier
 
 
-classifier = SpamClassifier()
+
 app = Flask(__name__)
 
 Bootstrap(app)
@@ -17,7 +17,8 @@ class ReviewForm(Form):
     comment = TextAreaField('',
                                 [validators.DataRequired(),
                                 validators.length(min=15)])
-
+classifier = SpamClassifier()
+y, proba=x.classify(review)
 @app.route('/')
 def index():
     form = ReviewForm(request.form)
@@ -28,8 +29,7 @@ def results():
     form = ReviewForm(request.form)
     if request.method == 'POST' and form.validate():
         review = request.form['comment']
-        y, proba=x.classify(review)
-        y, proba = classify(review)
+        #y, proba = classify(review)
         return render_template('results.html',
                                 content=review)#,
                                prediction=y,
