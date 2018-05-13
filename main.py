@@ -5,8 +5,12 @@ import sqlite3
 import os
 import numpy as np
 from flask_bootstrap import Bootstrap
+from nlpcloud import SpamClassifier
 
 app = Flask(__name__)
+x = SpamClassifier()
+x.classify(tekst)
+
 Bootstrap(app)
 app.url_map.strict_slashes = False
 class ReviewForm(Form):
