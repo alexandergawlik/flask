@@ -8,7 +8,7 @@ from flask_bootstrap import Bootstrap
 from nlpcloud import SpamClassifier
 
 app = Flask(__name__)
-x = SpamClassifier()
+SpamClassifier()
 Bootstrap(app)
 app.url_map.strict_slashes = False
 class ReviewForm(Form):
